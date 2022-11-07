@@ -18,24 +18,25 @@
 </head>
 
 <body>
+
   <form action="">
-    <input type="text" name="username" pattern="[A-z]{5,20}" oninvalid="validate('请输入5~20位字母的用户名')">
+    <label for="userName">用户名:</label>
+    <input id="userName" name="userName" pattern="[A-z]{5,20}" oninvalid="handleInvalid('请输入5-20位字母的用户名')" />
     <button type="submit">提交</button>
   </form>
-
   <br />
 
   <select name="lesson">
     <option value="">Please Select</option>
     <optgroup label="Backend">
-      <option value="php">PHP</option>
-      <option value="linux">LINUX</option>
-      <option value="mysql">MYSQL</option>
+      <option value="java">Java</option>
+      <option value="c++">C++</option>
+      <option value="mysql">MySQL</option>
     </optgroup>
     <optgroup label="Frontend">
-      <option value="php">HTML</option>
-      <option value="linux">JAVASCRIPT</option>
-      <option value="mysql">CSS</option>
+      <option value="javascript">Javascript</option>
+      <option value="vue">Vue</option>
+      <option value="react">React</option>
     </optgroup>
   </select>
 
@@ -72,17 +73,8 @@
     </form>
   </div>
 
-  <div>
-    <form action="">
-      <span class="title">autocomplete</span>
-      <input type="search" autocomplete="on" name="content" />
-      <button>提交</button>
-    </form>
-  </div>
-
-
   <script>
-    function validate(message) {
+    function handleInvalid(message) {
       alert(message);
     }
   </script>
